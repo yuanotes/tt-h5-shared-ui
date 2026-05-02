@@ -1,12 +1,14 @@
 # tt-h5-shared-ui — Agent Guide
 
-Pure JS/CSS reusable card game UI components. No server-side code, no Python, no HTTP endpoints.
+Reusable JS/CSS card game UI components for mini-dashboard electronic prototypes.
+Served by mini-dashboards' server.py via `backend.py` auto-discovery.
 
 ## Structure
 
 ```text
 ├── README.md
 ├── AGENTS.md
+├── backend.py              # aiohttp register() — serves /shared-ui static
 ├── cardSelection.mjs       # Card frame + choice dialog + selection helpers
 ├── cardStack.mjs           # Card pile rendering + collapse/expand
 ├── cardStack.css           # Stack styles
@@ -24,7 +26,6 @@ Pure JS/CSS reusable card game UI components. No server-side code, no Python, no
 - **DOM-rendering only**: These are rendering helpers. They know nothing about game rules, state machines, or win conditions.
 - **Game-agnostic**: No hard-coded game cards, types, or mechanics. Callers supply card data descriptors.
 - **Card ratio**: All cards use 51:89 width:height ratio.
-- **No server**: This is a static asset library. Serving is the consumer's responsibility.
 
 ## When modifying
 
